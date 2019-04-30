@@ -17,9 +17,7 @@
     "test": "jest",
     "data-gen-pg": "node ./database/postgres/generateDataPG.js",
     "seed-pg": "node database/postgres/seed.js",
-    "query-pg": "node database/postgres/query.js",
-    "query-cs": "cqlsh database/cassandra/query.cql",
-    "data-gen-cs": "node --max-old-space-size=4076 database/cassandra/generateDataCS.js"
+    "query-pg": "node database/postgres/query.js"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "jest-enzyme",
