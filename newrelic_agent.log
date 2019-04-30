@@ -1,0 +1,4 @@
+{"v":0,"level":30,"name":"newrelic","hostname":"sydneys-mbp.lan","pid":51924,"time":"2019-04-30T03:12:31.875Z","msg":"Using New Relic for Node.js. Agent version: 5.7.0; Node version: v10.15.3."}
+{"v":0,"level":30,"name":"newrelic","hostname":"sydneys-mbp.lan","pid":51924,"time":"2019-04-30T03:12:32.252Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"sydneys-mbp.lan","pid":51924,"time":"2019-04-30T03:12:34.450Z","msg":"Connected to collector-006.newrelic.com:443 with agent run ID BMH50Zm-_bUTACN6KBFYtYdcx714AAgBAAAjHQECBBFYtYUDAAU1LjcuMAAPc3lkbmV5cy1tYnAubGFuAAxiYW5kbGFuZC1zZGM.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"sydneys-mbp.lan","pid":51924,"time":"2019-04-30T03:12:34.451Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/2325032/applications/291026309","component":"collector_api"}
