@@ -1,0 +1,29 @@
+config:
+  target: 'http://localhost:3001'
+  phases:
+    - duration: 30
+      arrivalRate: 1000
+  http:
+    pool: 5
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+  processor: './artillery-helper.js'
+scenarios:
+  - flow:
+    - function: 'getID'
+    - loop:
+        - get:
+            url: "/api/albums/{{ ID }}"
+      count: 1
+    - flow:
+      - post:
+            url: "/api/albums/"
+            json: {
+                    "id": 0000,
+                    "artist": "Robin Kim",
+                    "albumName": "confessions of a software engineer",
+                    "albumArt": "sparkling-heart.jpg",
+                    "tags": "blahblahblah",
+                    "description": "blahblahblah"
+                }
