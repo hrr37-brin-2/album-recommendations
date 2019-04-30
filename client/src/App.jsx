@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RecommendedAlbums from './components/RecommendedAlbums.jsx';
 import Tags from './components/Tags.jsx';
-import { mockAlbumResults } from './mockData.js';
+import { mockAlbumResults } from '../mockData.js';
 
 
 class RecommendedAlbumsApp extends React.Component {
