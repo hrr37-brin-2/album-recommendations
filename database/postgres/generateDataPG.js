@@ -9,9 +9,9 @@ const generateData = () => {
     let entry = {};
     entry.albumName = `${faker.commerce.color()}`;
     entry.artist = `${faker.name.firstName()}`;
-    entry.albumArt = `${faker.image.avatar()}`;
+    entry.albumArt = 'https://picsum.photos/200/300';
     entry.tags = `${faker.random.word()}`;
-    entry.description = faker.lorem.sentence(1);
+    entry.description = faker.lorem.sentence(8);
     dataArr.push(entry);
   }
   return dataArr;
@@ -22,7 +22,8 @@ const generateData = () => {
 for (let i = 0; i < 10; i++) {
   const data = generateData();
   const header = Object.keys(data[0]);
-  let csv = data.map(row => header.map(fieldName => JSON.stringify(row[fieldName])).join(','));
+  let csv = data.map(row =>
+    header.map(fieldName => JSON.stringify(row[fieldName])).join(','));
   csv.unshift(header.join(','));
   csv = csv.join('\r\n');
 
@@ -31,4 +32,5 @@ for (let i = 0; i < 10; i++) {
     else { console.log('data saved'); }
   });
 };
+
 console.timeEnd('finished data generation in');

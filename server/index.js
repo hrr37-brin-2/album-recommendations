@@ -15,14 +15,45 @@ app.get(`/:id`, (req, res) => {
   res.sendFile(path.join(__dirname, '/../client/dist/index.html'))
 });
 
-app.get(`/api/albums`, (req, res) => {
-    db.getRecommendedAlbums(1, (err, results) => {
-      if (err) {
-        console.log('error getting data in server', err);
-        res.status(500);
-        res.send('oops, something went wrong!' );
-      } else {  res.status(200).send(results.rows[0]); }
-    });
+
+app.get('/api/albums/1', (req, res) => {
+  let id = Math.floor(Math.random() * Math.floor(10000000));
+  db.getRecommendedAlbums([id], (err, result) => {
+    if (err) { console.log(err); res.send(500, err); }
+    else { res.send(result.rows[0]); }
+  });
+});
+
+app.get('/api/albums/2', (req, res) => {
+  let id = Math.floor(Math.random() * Math.floor(10000000));
+  db.getRecommendedAlbums([id], (err, result) => {
+    if (err) { console.log(err); res.send(500, err); }
+    else { res.send(result.rows[0]); }
+  });
+});
+
+app.get('/api/albums/3', (req, res) => {
+  let id = Math.floor(Math.random() * Math.floor(10000000));
+  db.getRecommendedAlbums([id], (err, result) => {
+    if (err) { console.log(err); res.send(500, err); }
+    else { res.send(result.rows[0]); }
+  });
+});
+
+app.get('/api/albums/4', (req, res) => {
+  let id = Math.floor(Math.random() * Math.floor(10000000));
+  db.getRecommendedAlbums([id], (err, result) => {
+    if (err) { console.log(err); res.send(500, err); }
+    else { res.send(result.rows[0]); }
+  });
+});
+
+app.get('/api/albums/5', (req, res) => {
+  let id = Math.floor(Math.random() * Math.floor(10000000));
+  db.getRecommendedAlbums([id], (err, result) => {
+    if (err) { console.log(err); res.send(500, err); }
+    else { res.send(result.rows[0]); }
+  });
 });
 
 app.get(`/api/album/:id`, (req, res) => {
@@ -30,8 +61,8 @@ app.get(`/api/album/:id`, (req, res) => {
   db.getDataForId([id], (err, results) => {
     if (err) {
       console.log('error getting data in server', err);
-      res.status(500).json({ message: 'oops, something went wrong!' });
-    } else { console.log(results.rows[0]); res.status(200).send(results.rows[0]); }
+      res.send('oops, something went wrong!');
+    } else { console.log(results.rows[0]); res.send(results.rows[0]); }
   });
 });
 

@@ -16,9 +16,12 @@ class RecommendedAlbums extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      albums: mockAlbumResults
-    })
+    for (var i = 1; i < 6; i++) {
+      fetch(`/api/albums/${i}`)
+      .then(response => response.json())
+      .then(albums => this.state.albums.push(albums))
+      .catch(error => console.log(error));
+    }
   }
 
   enterHandler(albumID) {
@@ -35,7 +38,7 @@ class RecommendedAlbums extends React.Component {
       this.state.albums.map((album => {
         const activeAlbumClass = this.state.isHovered && this.state.activeAlbum === album.id ? "hovered-on" : ""
         return <div key={album.id} className={`album-square ${hoverClass} ${activeAlbumClass}`} onMouseEnter={() => this.enterHandler(album.id)} onMouseLeave={this.leaveHandler} >
-          <img className="album-art" src={album.albumArt} />
+          <img className="album-art" src={album.albumart} />
           <div className="rec-album-info">
             <span className="release-title">{album.albumName}</span>
             <p className="release-artist">by {album.artist}</p>
