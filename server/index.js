@@ -1,4 +1,4 @@
-require('newrelic');
+// require('newrelic');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -21,7 +21,7 @@ app.get(`/api/albums`, (req, res) => {
         console.log('error getting data in server', err);
         res.status(500);
         res.send('oops, something went wrong!' );
-      } else { console.log(results.rows[0]); res.send(results.rows[0]); }
+      } else {  res.status(200).send(results.rows[0]); }
     });
 });
 
@@ -31,7 +31,7 @@ app.get(`/api/album/:id`, (req, res) => {
     if (err) {
       console.log('error getting data in server', err);
       res.status(500).json({ message: 'oops, something went wrong!' });
-    } else { console.log(results.rows[0]); res.send(results.rows[0]); }
+    } else { console.log(results.rows[0]); res.status(200).send(results.rows[0]); }
   });
 });
 

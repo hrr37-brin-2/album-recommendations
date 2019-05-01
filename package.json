@@ -12,12 +12,11 @@
     "lint": "eslint . --ext .js",
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "seed-data": "node ./database/seed.js",
-    "get-test": "curl http://localhost:3001/api/albums/1",
+    "get-test": "curl /api/albums/1",
     "test": "jest",
-    "data-gen-pg": "node ./database/postgres/generateDataPG.js",
-    "seed-pg": "node database/postgres/seed.js",
-    "query-pg": "node database/postgres/query.js"
+    "data-gen": "node ./database/postgres/generateDataPG.js",
+    "seed": "node database/postgres/seed.js",
+    "query": "node database/postgres/query.js"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "jest-enzyme",

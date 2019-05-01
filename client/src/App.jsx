@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RecommendedAlbums from './components/RecommendedAlbums.jsx';
 import Tags from './components/Tags.jsx';
-import { mockAlbumResults } from '../mockData.js';
+import { mockAlbumResults } from './mockData.js';
 
 
 class RecommendedAlbumsApp extends React.Component {
@@ -26,11 +26,12 @@ class RecommendedAlbumsApp extends React.Component {
   }
 
   getExampleAlbumInfo() {
-    fetch(`http://localhost:3001/api/album/${this.state.albumId}`)
+    fetch(`/api/album/${this.state.albumId}`)
       .then(response => response.json())
       .then(album => {
         this.setState({ artist: album.artist, albumTags: album.tags })
       })
+      .catch(error => console.log(error));
   }
 
   render() {
