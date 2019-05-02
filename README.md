@@ -15,8 +15,8 @@
 
 ## Usage
 
-- Before seeding database: ```$brew install mongodb```
-- To start mongo: ```$brew services start mongodb``` then ```$mongo```
+- To generate data: ```npm run data-gen```
+- To seed postgres db: connect to your database and run ```npm seed```
 
 ## Requirements
 
@@ -24,7 +24,6 @@
 
 ## Development
 
-- To seed the database: ```npm run seed-data```
 - To start the server: ```npm run start```
 - To start webpack: ```npm run react-dev```
 
