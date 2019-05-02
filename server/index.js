@@ -62,7 +62,7 @@ app.get(`/api/album/:id`, (req, res) => {
     if (err) {
       console.log('error getting data in server', err);
       res.send('oops, something went wrong!');
-    } else { console.log(results.rows[0]); res.send(results.rows[0]); }
+    } else { res.send(results.rows[0]); }
   });
 });
 
