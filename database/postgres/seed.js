@@ -7,7 +7,7 @@ const client = new Client({
  });
 
 client.connect();
-const SRC = path.dirname('/Users/sydneycasey/Desktop/hrr37/sdc-backup/database/postgres/data');
+const SRC = path.dirname('/Users/sydneycasey/Desktop/hrr37/album-recommendations/database/postgres/data');
 
 // seeds postgres db using .csv data files
 

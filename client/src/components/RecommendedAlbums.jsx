@@ -1,5 +1,4 @@
 import React from 'react';
-import { mockAlbumResults } from '../mockData';
 
 class RecommendedAlbums extends React.Component {
   constructor(props) {
@@ -40,7 +39,7 @@ class RecommendedAlbums extends React.Component {
         return <div key={album.id} className={`album-square ${hoverClass} ${activeAlbumClass}`} onMouseEnter={() => this.enterHandler(album.id)} onMouseLeave={this.leaveHandler} >
           <img className="album-art" src={album.albumart} />
           <div className="rec-album-info">
-            <span className="release-title">{album.albumName}</span>
+            <span className="release-title">{album.albumname}</span>
             <p className="release-artist">by {album.artist}</p>
           </div>
           {this.state.activeAlbum === album.id ? <div className="album-description">{album.description}</div> : null}

@@ -9,7 +9,7 @@ const generateData = () => {
     let entry = {};
     entry.albumName = `${faker.commerce.color()}`;
     entry.artist = `${faker.name.firstName()}`;
-    entry.albumArt = 'https://picsum.photos/200/300';
+    entry.albumArt = `${faker.image.avatar()}`;
     entry.tags = `${faker.random.word()}`;
     entry.description = faker.lorem.sentence(8);
     dataArr.push(entry);
